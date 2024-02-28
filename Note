@@ -1,2 +1,83 @@
+<!-- streams
+=>streams are a source of asynchronous events delivered sequentially. There are data events, which are sometimes referred to as elements of the stream due to a stream’s similarity to a list, and there are error events, which are notifications of failure. Once all data elements have been emitted, a special event signaling the stream is done will notify any listeners that there is no more.                                                                                                                  
+=> our illustration to understand streams are a choclate factory
+ order taker
+in real this is a part to add the event/value/ object in to a stream
+by using streamcontroller.add function we can add values to a stream
+order inspector
+map function of a stream will watch out every values in the stream and do some processing on it.
+in this part will take the only wanted attribute of the passed value(object)
+baker
+there is a transformer which maked the actual operation on the object and the add in to the stream again
+
+finally listen functiuon
+is a function to listen what is changed in the strean and show a change
+
 Bloc Pattern
-=> it is a pattern based on stream of events which 
+=> it is a pattern based on stream of events . 
+=> there is event producing widgets and evnet consuming widgets
+
+ -->
+
+Scalable
+organized
+structured
+Maintainable
+
+# Chapter one:Why Blcc?
+Bloc is a design pattern developed by google to separate the presentation layer with the data layer
+# **Advantage**
+> better understading of our own apps
+> more structured code,easier to maintain and test
+> know every state of the applicatiom
+> it have a single code base.
+
+
+# Chapter 2- Bloc core concepts
+
+## STREAMS
+== async*  asynchronus data generating function
+== yield it pushes the data to the stream
+== await helps for waiting the process to finish
+this is foundationn of bloc
+this a very crucial in the concept of bloc becuase we have to catch every event happened in the ui so we cam handle the state properly.
+
+## Cubit
+it is a special type of stream component
+bloc extebs cubit
+based on some function called from the ui  function to  rebuild the ui by emitting diffrent state on the stram
+class CounterCubit extends Cubit<int>{
+    CounterCubit:super(0)
+
+    void increament()=>emit(state+1)
+    void decreament()=>emit(state-1)
+
+}
+
+=> Cubit functions are not a part of a stream. they are simply pre made list of what  a cubit can do
+=> the one and only stream found in cubit is the stream of emitted state
+
+
+## BLOC
+it recives a stream of events and release a stream of state
+
+
+# Flutter BLoc Concept
+
+1. Bloc Provider
+    It will provide a single a single instance of a bloc to the subtree bellow it......it also called dependency injecttion
+    responsible for closing the bloc
+    it instantiates the bloc lazely meaning it is created when it is needed
+    BlocProvider.create() to instantiate the bloc
+    BlocProvider.value()== toi pass the on;ly instantiated bloc to another context
+
+2. Bloc Builder
+    It is a widget that helps rebuilding the ui based on the state changes
+    it requires a bloc or a cubit and it have a builder function
+3. Bloc Listner
+
+
+4 Bloc Consumer
+
+
+5. Repository provider
