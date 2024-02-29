@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:learning_bloc/cubit/counter_cubit_cubit.dart';
+import 'package:learning_bloc/logic/cubit/counter_cubit_cubit.dart';
 
 void main() {
   group('description', () {
-    CounterCubitCubit counterCubit = CounterCubitCubit();
+    CounterCubit counterCubit = CounterCubit();
 
     test('description', () {
       expect(counterCubit.state,
