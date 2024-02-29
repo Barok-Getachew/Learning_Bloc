@@ -74,10 +74,39 @@ it recives a stream of events and release a stream of state
 2. Bloc Builder
     It is a widget that helps rebuilding the ui based on the state changes
     it requires a bloc or a cubit and it have a builder function
+    it can be called multiple times in the flutter engine
 3. Bloc Listner
+    a flutter widget to listen any state change 
 
-
-4 Bloc Consumer
-
+4. Bloc Consumer
+    a widget which includes includes both blocprovider and blocListner
 
 5. Repository provider
+
+
+
+
+# Chapeter 3: Bloc Arcitecture
+ => Architecture is the skeleton,Blue print the structure which it keeps our code organized ,stable and easy to maintain.
+ =>Bloc Architecture have three layers
+        1.Data Layer:
+            have  a responsiblity to retrive and also manipulate data from multiple sources.
+            It have three important sublayers
+                1.Model
+                    It is  a blue print to the data your application will work with.
+                    it should be independent of the source
+                2. Data provider
+                    Its responiblity is to pass raw data to its succesor
+                    this serve as API FOR our application
+                3. Repository 
+                    is a wrapper between one or more data providers
+                    it is  class where our model is instantiated with th row data for data provider 
+                    we can do everying on the data
+        2.The Blo layer
+            Mediator beetween the data layer and pesentation layer
+            one or more blocs communicate with one another
+
+        3. The prsentaton layer
+            where the ui
+
+# Chapter-4: Bloc-Tesing

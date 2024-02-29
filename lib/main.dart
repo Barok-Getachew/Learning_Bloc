@@ -42,7 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("you have pushed the buttons this many times"),
-            BlocBuilder<CounterCubitCubit, CounterState>(
+            BlocConsumer<CounterCubitCubit, CounterState>(
+              listener: (context, state) {
+                if (state.wasIncreamented) {
+                  Scaffold.of(context).showBottomSheet(
+                      (context) => SnackBar(content: Text('data')));
+                }
+              },
               builder: (context, state) {
                 return Text(
                   state.counterValue.toString(),
