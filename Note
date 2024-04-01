@@ -44,8 +44,8 @@ this a very crucial in the concept of bloc becuase we have to catch every event 
 
 ## Cubit
 it is a special type of stream component
-bloc extebs cubit
-based on some function called from the ui  function to  rebuild the ui by emitting diffrent state on the stram
+bloc extends cubit
+based on some function called from the ui  function to  rebuild the ui by emitting diffrent state on the stream
 class CounterCubit extends Cubit<int>{
     CounterCubit:super(0)
 
@@ -116,3 +116,7 @@ it recives a stream of events and release a stream of state
 
 
 # chapter-5: Bloc Acccess
+
+
+
+# chapter-5: Bloc to Bloc Commnucation

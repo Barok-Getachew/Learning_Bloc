@@ -30,8 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
               listener: (context, state) {
                 if (state.wasIncreamented) {
                   // Show snackbar when counter > 10
-                  final snackBar = SnackBar(
-                    content: const Text('Yay! A SnackBar!'),
+                  const snackBar = SnackBar(
+                    content: Text('Yay! A SnackBar!'),
                   );
 
                   // Find the ScaffoldMessenger in the widget tree
@@ -39,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {
                   // Show snackbar when counter > 10
-                  final snackBar = SnackBar(
-                    content: const Text('Decreamentd'),
+                  const snackBar = SnackBar(
+                    content: Text('Decreamentd'),
                   );
 
                   // Find the ScaffoldMessenger in the widget tree
@@ -73,13 +73,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+           const SizedBox(
+              height: 10,
+            ),
+
             MaterialButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const SecondScreen(title: "title"),
+                  builder: (context) => const SecondScreen(title: "Second Page"),
                 ));
               },
-              color: Colors.black,
+              color: Colors.purple,
               child: const Text('Navigate'),
             ),
           ],
